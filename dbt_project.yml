@@ -27,7 +27,7 @@ vars:
 
 seeds:
   jaffle_shop:
-    +schema: jaffle_shop.mshaver
+    +schema: raw
 
 models:
   jaffle_shop:
