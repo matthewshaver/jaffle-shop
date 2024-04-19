@@ -10,3 +10,8 @@ models:
         tests:
           - not_null
           - unique
+      - name: oder_total_cents
+        description: Subtotal paid for each order
+        test:
+          - positive_payment_amount
+

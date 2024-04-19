@@ -11,10 +11,10 @@ renamed as (
     select
 
         ----------  ids
-        id as customer_id,
+        c1 as customer_id,
 
         ---------- text
-        name as customer_name
+        c2 as customer_name
 
     from source
 
