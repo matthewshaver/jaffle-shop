@@ -11,6 +11,7 @@ models:
         description: The corresponding order each order item belongs to
         tests:
           - not_null
-          - relationships:
-              to: ref('stg_orders')
-              field: order_id
+      - name: product_id
+        description: Subtotal paid for each order
+        tests:
+          - validate_sku

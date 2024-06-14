@@ -1,8 +1,20 @@
+{{ 
+    config(
+        materialized='incremental',
+        unique_key='order_id'
+    ) 
+}}
+
 with
 
 source as (
 
     select * from {{ source('ecom', 'raw_orders') }}
+    where true
+    {{ limit_in_dev('ordered_at') }}
+    {% if is_incremental() %}
+        and ordered_at > (select max(ordered_at) from {{ this }})
+    {% endif %}
 
 ),
 
